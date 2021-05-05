@@ -4,8 +4,14 @@ let h3 = document.querySelector("h3");
 
 let date = now.getDate();
 let hours = now.getHours();
+if (hours < 10) {
+    hours = `0${hours}`;
+}
 let month = now.getMonth();
 let minutes = now.getMinutes();
+if (minutes < 10) {
+    minutes = `0${minutes}`;
+}
 let year = now.getFullYear();
 
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
