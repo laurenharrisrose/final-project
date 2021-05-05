@@ -42,13 +42,15 @@ function showWeather(response) {
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   let conditions = document.querySelector("#currently-in");
-  conditions.innerHTML = `${response.data.weather[0].main}`
+  conditions.innerHTML = `${response.data.weather[0].description}`
   let highTemp = document.querySelector("#todaysHigh");
   highTemp.innerHTML = Math.round(response.data.main.temp_max);
   let lowTemp = document.querySelector("#todaysLow");
   lowTemp.innerHTML = Math.round(response.data.main.temp_min);
   let humid = document.querySelector("#todaysHumidity");
   humid.innerHTML = Math.round(response.data.main.humidity);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("fas",`http://openweathermap.org/img/wn/10d@2x.png`);
   }
 
 function findCity(city) {
