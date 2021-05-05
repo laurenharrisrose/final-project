@@ -43,6 +43,10 @@ h3 {
   font-weight: bold;
 }
 
+img {
+  padding-right: 1px;
+}
+
 .current-metrics {
   text-align: center;
   font-size: 12px;

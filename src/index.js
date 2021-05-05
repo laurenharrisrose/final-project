@@ -49,8 +49,8 @@ function showWeather(response) {
   lowTemp.innerHTML = Math.round(response.data.main.temp_min);
   let humid = document.querySelector("#todaysHumidity");
   humid.innerHTML = Math.round(response.data.main.humidity);
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("fas",`http://openweathermap.org/img/wn/10d@2x.png`);
+  let iconElement = document.querySelector("#icons");
+  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   }
 
 function findCity(city) {
