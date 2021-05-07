@@ -23,12 +23,6 @@ let monthy = months[now.getMonth()];
 
 h3.innerHTML = `Current Weather for ${day}, ${monthy} ${date} at ${hours}:${minutes}`;
 
-let fahrenheitTemperature = null;
-
-let form = document.querySelector("#city-input");
-let submitButton = document.querySelector(".btn");
-form.addEventListener("submit", citySearch);
-submitButton.addEventListener("click", citySearch);
 
 function citySearch(event) {
   event.preventDefault();
@@ -72,23 +66,7 @@ function retrievePosition(position) {
 
   navigator.geolocation.getCurrentPosition(retrievePosition);
 
-fahrenheitTemperature = response.data.main.temp;
-
-function showCelciusTemperature(event) {
-    event.preventDefault();
-    let celciusTemperature = (80 - 32) * 5 / 9;
-    let currentTemp = document.querySelector("#current-temp");
-    currentTemp.innerHTML = Math.round(celciusTemperature);
-  }
-
-  function showFahrenheitTemperature(event) {
-    event.preventDefault();
-    let currentTemp = document.querySelector("#current-temp");
-    currentTemp.innerHTML = Math.round(fahrenheitTemperature);
-  }
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelciusTemperature);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+let form = document.querySelector("#city-input");
+let submitButton = document.querySelector(".btn");
+form.addEventListener("submit", citySearch);
+submitButton.addEventListener("click", citySearch);
