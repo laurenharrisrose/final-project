@@ -8,13 +8,6 @@
   padding: 10px;
 }
 
-.card-body img {
-  width: 60px;
-  display: block;
-  margin: 0 auto;
-  margin-top: -18px;
-}
-
 h1 {
   text-align: center;
   color: hotpink;
@@ -75,9 +68,22 @@ p {
   color: hotpink;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1.5px;
+}
+
 .card {
   border-color: hotpink;
   border-width: 2px;
+}
+
+.card-body img {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -18px;
 }
 
 strong {

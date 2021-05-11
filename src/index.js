@@ -23,6 +23,31 @@ let monthy = months[now.getMonth()];
 
 h3.innerHTML = `Current Weather for ${day}, ${monthy} ${date} at ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+let days = ["THU", "FRI", "SAT", "SUN", "MON"];
+
+let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row" id="forecast">
+            <div class="col">
+                <div class="card" style="width: 6rem;">
+                    <div class="card-body">
+                        <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="Weather" />
+                        <h5 class="card-title">${day}</h5>
+                        <p class="card-text">High: 85<br />Low: 75</p>
+                    </div>
+                </div>
+            </div>
+        `;
+  });
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
 
 function citySearch(event) {
   event.preventDefault();
@@ -70,3 +95,5 @@ let form = document.querySelector("#city-input");
 let submitButton = document.querySelector(".btn");
 form.addEventListener("submit", citySearch);
 submitButton.addEventListener("click", citySearch);
+
+displayForecast();
