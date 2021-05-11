@@ -8,6 +8,13 @@
   padding: 10px;
 }
 
+.card-body img {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -18px;
+}
+
 h1 {
   text-align: center;
   color: hotpink;
@@ -71,16 +78,6 @@ p {
 .card {
   border-color: hotpink;
   border-width: 2px;
-}
-
-.partly-icon,
-.sun-icon,
-.rain-icon,
-.windy-icon {
-  text-align: center;
-  color: limegreen;
-  font-size: 50px;
-  margin-bottom: 10px;
 }
 
 strong {
