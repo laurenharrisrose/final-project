@@ -22,6 +22,14 @@ let monthy = months[now.getMonth()];
 
 h3.innerHTML = `Current Weather for ${day}, ${monthy} ${date} at ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
   function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -33,9 +41,9 @@ h3.innerHTML = `Current Weather for ${day}, ${monthy} ${date} at ${hours}:${minu
       `     <div class="col">
                 <div class="card" style="width: 6rem;">
                     <div class="card-body">
-                        <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}2x.png" alt="Weather" />
+                        <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="Weather" />
                         <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
-                        <p class="card-text">High:${Math.round(forecastDay.temp.max)}<br />Low:${Math.round(forecastDay.temp.min)}</p>
+                        <p class="card-text">High: ${Math.round(forecastDay.temp.max)}°<br />Low: ${Math.round(forecastDay.temp.min)}°</p>
                     </div>
                 </div>
             </div>
