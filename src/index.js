@@ -35,7 +35,7 @@ function formatDay(timestamp) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
     forecastHTML =
       forecastHTML +
       `     <div class="col">
